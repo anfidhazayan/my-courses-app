@@ -8,20 +8,21 @@ Developed using **React**, **Vite**, **Tailwind CSS (v4)**, and **React Query**,
 
 ## Features
 
-- ** Modern Dashboard Layout**: Responsive sidebar navigation menu, clean content cards, slide-up entry animations, and a polished header.
-- ** Real-Time Search**: Filter courses dynamically by title from the main search bar in the catalog view.
-- ** Course Favorites**: Star/unstar courses to build your personal shortlist. Favorited states are saved to `localStorage` and filterable with a dedicated "Favorites" tab.
-- ** Optional Dark Mode Toggle**: Easily toggle between light and dark themes using the header control (persisted in `localStorage`).
-- **Dynamic Dashboard Stats**: Live calculation of overall learning stats:
+- **Modern Dashboard Layout** – Responsive sidebar navigation, clean dashboard cards, smooth slide-up animations, and a polished user interface.
+- **Real-Time Course Search** – Instantly filter courses by title from the catalog search bar.
+- **Course Favorites** – Mark courses as favorites and access them anytime from the dedicated **Favorites** tab. Favorite selections are persisted using localStorage.
+- **Dark Mode Support** – Toggle between light and dark themes with user preference saved in localStorage.
+- **Dynamic Dashboard Statistics**
   - Total Courses
-  - Completed Materials (updates instantly as checklist items are checked)
+  - Completed Materials (updates in real time)
   - Pending Assignments
   - Upcoming Live Sessions
-- ** Next Live Class Card**: Displays info for the closest upcoming live session at the top of the dashboard, complete with direct "Join Class" buttons.
-- ** Dynamic Progress Tracking**: Marking checklist items (Videos, PDFs, Labs, Articles) in the Study Materials section instantly updates the progress bar and dynamically updates the course's completion state (completed courses shift to the "Completed" tab automatically).
-- ** Instructor Profiles & Contact**: Clean instructor cards with dynamic ratings and clickable email contact prompts.
-
----
+- **Next Live Class Widget** – Displays the nearest upcoming live session with a quick **Join Class** action.
+- **Progress Tracking** – Track learning progress by marking study materials (videos, PDFs, labs, and articles) as completed. Progress bars and course completion status update automatically.
+- **Automatic Course Completion** – Courses move to the **Completed** tab automatically once all study materials are finished.
+- **Instructor Profiles** – View instructor information, ratings, and quickly contact instructors through the provided email link.
+- **Responsive Design** – Optimized for desktop, tablet, and mobile devices.
+- **Loading & Error States** – Provides feedback during data fetching and gracefully handles API errors.
 
 ##  Technology Stack
 

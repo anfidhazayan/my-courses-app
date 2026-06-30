@@ -138,7 +138,7 @@
       "title": "Prompt Engineering Basics",
       "type": "PDF",
       "duration": "22 pages",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
@@ -146,7 +146,7 @@
       "title": "Building AI Agents",
       "type": "Video",
       "duration": "35 min",
-      "completed": false
+      "completed": true
     },
     {
       "id": "4",
@@ -210,7 +210,7 @@
       "title": "Linked Lists",
       "type": "Video",
       "duration": "32 min",
-      "completed": false
+      "completed": true
     },
     {
       "id": "12",
@@ -218,7 +218,7 @@
       "title": "Binary Trees",
       "type": "Lab Exercise",
       "duration": "60 min",
-      "completed": false
+      "completed": true
     }
   ],
   "assignments": [

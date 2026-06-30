@@ -1,53 +1,79 @@
-# ⚙️ Technical Approach: LMS UI Overhaul
+# APPROACH
 
-This document details the architectural approach and design decisions taken to transform the existing React + Tailwind LMS project into a modern, responsive, and feature-rich learning portal.
+This document outlines the architectural approach and key design decisions taken to enhance the existing React + Tailwind LMS project into a modern, responsive, and feature-rich learning portal.
 
----
+## Architectural Constraints
 
-## 🧭 Architectural Constraints
+The following project constraints were maintained throughout development:
 
-We strictly adhered to the following developer constraints:
-1. **No modifications to routing structure**: Retained React Router routes (`/` for dashboard catalog, `/courses/:courseId` for course details page).
-2. **No changes to state libraries, hooks, or Axios queries**: Preserved React Query caching strategies, fetch handlers, and mutation mechanisms (such as `useUpdateMaterial` for checklist updates) completely.
-3. **No database mutations**: Kept `db.json` unaltered.
-4. **Style isolation**: Used strictly **Tailwind CSS (v4)** classes and Tailwind-native themes.
+* Preserved the existing React Router structure (`/` for the dashboard and `/courses/:courseId` for course details).
+* Did not modify the existing state management, React Query hooks, Axios requests, or mutation logic. Existing caching and data-fetching strategies were retained.
+* Left the `db.json` data unchanged.
+* Used only Tailwind CSS (v4) for styling to ensure consistency with the existing project.
 
----
+## Implementation Details
 
-## 🛠️ Implementation Details
+### 1. UI & Typography Enhancements
 
-### 1. Style & Typography Upgrades
-- **Font Face**: Imported the premium **Plus Jakarta Sans** typeface via `@import url(...)` in `src/index.css`.
-- **Color Palettes**: Configured a primary brand crimson red color scheme (`#b30d0d`) matched to the user's reference dashboard design screenshot.
-- **Scrollbars**: Designed responsive, low-profile webkit scrollbars that blend smoothly into light and dark interfaces.
+* Imported **Plus Jakarta Sans** as the primary application font.
+* Applied a modern red-based color palette inspired by the provided design reference.
+* Customized lightweight scrollbars that adapt to both light and dark themes.
 
-### 2. Header & Clean Sidebar Layout (`DashboardLayout.jsx`)
-- Wrapped all pages in a cohesive `DashboardLayout` component.
-- Implemented a collapsible desktop sidebar and a slide-over drawer structure for tablet/mobile screen sizes.
-- Cleared out mock categories and non-functional navigation lists to ensure zero broken links.
-- Stripped hardcoded profile text and warning bell buttons to clean the top-right header view.
+### 2. Dashboard Layout
 
-### 3. Integrated Dynamic Progress Indicators
-- **Problem**: The database contains a static `progress` integer (e.g. `40%`) that was not updated dynamically in the backend when the student toggled course checklist materials.
-- **Solution**: We integrated the dashboard catalog (`MyCourses.jsx`) with the `useMaterials` and `useFaculty` query hooks. Instead of rendering static db percentages, the dashboard dynamically calculates each course's true completion percentage based on checked materials:
-  $$\text{Progress} = \text{round}\left( \frac{\text{Completed Materials}}{\text{Total Materials}} \times 100 \right)$$
-- **Instant Sync**: Toggling items on the Course Details page executes the `updateMaterial` mutation, which invalidates the `["materials"]` query. This causes React Query to automatically refetch and synchronize progress bars across both the catalog and details pages instantly, updating the dashboard tabs in real-time.
+* Created a reusable `DashboardLayout` component to provide a consistent layout across pages.
+* Implemented a collapsible sidebar for desktop devices and a slide-out navigation drawer for tablets and mobile devices.
+* Removed unused navigation items and placeholder content to improve usability.
+* Simplified the header by removing unnecessary mock profile information and inactive notification elements.
 
-### 4. Added Features (Client-Side Enhancements)
-- **🔍 Course Search**: Implemented a stateful title search input in the catalog toolbar, matching character queries.
-- **❤️ Favorites System**: Rendered interactive Heart buttons on course thumbnails. Selections are stored in a serialized array in `localStorage` and filterable with a dedicated "Favorites" tab.
-- **🌙 Manual Dark Mode**: Added a Sun/Moon toggle button in the header. Toggling applies the `.dark` class to the HTML root, switching background/border/text values dynamically using Tailwind `dark:` variants. Prefers-color-theme state is saved in `localStorage`.
-- **📊 Dynamic Stats Panel**: Calculates counters (Total Courses, Completed Materials, Pending Assignments, Upcoming Sessions) dynamically based on actual database entries.
-- **🔔 Next Live Session Card**: Queries upcoming sessions, sorts them chronologically, and pins the next scheduled live event to the top of the dashboard catalog.
+### 3. Dynamic Progress Tracking
 
----
+The original project stored static course progress values that did not reflect user interactions.
 
-## 🧪 Verification & Stability Checks
+To address this, course progress is now calculated dynamically based on completed study materials.
 
-- **Compilation**: Verified using production Vite build scripts (`npm run build`) to ensure zero CSS compiler warnings, TypeScript rule failures, or bundler anomalies.
-- **Browser Validation**: Launched browser subagents to test:
-  1. Theme toggling (Dark/Light mode rendering).
-  2. Search filtering and favorites tab sorting.
-  3. Interactive checklist checkbox triggers.
-  4. Auto-calculation of statistics counts.
-  5. Responsive layout drawer behaviors.
+Progress is calculated as:
+
+**Progress = (Completed Materials / Total Materials) × 100**
+
+Whenever a study material is marked as completed, the existing `updateMaterial` mutation invalidates the `materials` query. React Query automatically refetches the updated data, ensuring that progress bars, completion percentages, and course status remain synchronized across both the dashboard and course details pages.
+
+## Additional Features
+
+### Course Search
+
+Implemented real-time filtering of courses by title using the dashboard search bar.
+
+### Favorites
+
+Users can mark courses as favorites. Favorite selections are stored in `localStorage` and can be viewed through a dedicated **Favorites** tab.
+
+### Dark Mode
+
+Added a light/dark theme toggle. The selected theme is stored in `localStorage`, and the interface updates using Tailwind's `dark:` utility classes.
+
+### Dynamic Dashboard Statistics
+
+Dashboard statistics are calculated dynamically using live application data, including:
+
+* Total Courses
+* Completed Materials
+* Pending Assignments
+* Upcoming Live Sessions
+
+### Next Live Class
+
+Displays the nearest upcoming live session at the top of the dashboard with a quick **Join Class** action.
+
+## Verification
+
+Before submission, the application was verified by:
+
+* Running production builds using `npm run build`.
+* Testing responsive layouts across desktop, tablet, and mobile devices.
+* Verifying search functionality.
+* Testing favorites persistence.
+* Confirming dark mode persistence.
+* Ensuring checklist updates correctly refresh course progress.
+* Validating dashboard statistics and live session calculations.
+* Confirming smooth navigation and overall application stability.

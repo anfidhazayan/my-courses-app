@@ -1,4 +1,4 @@
-# 🎓 my-courses: Modern LMS Platform
+#  my-courses: Modern LMS Platform
 
 A premium, modern Learning Management System (LMS) dashboard inspired by Coursera and Udemy. Features include a clean card-based catalog, dynamic course completion tracking, course search, a favorites system, an upcoming live session display, and full dark mode support.
 
@@ -6,24 +6,24 @@ Developed using **React**, **Vite**, **Tailwind CSS (v4)**, and **React Query**,
 
 ---
 
-## ✨ Features
+## Features
 
-- **🎨 Modern Dashboard Layout**: Responsive sidebar navigation menu, clean content cards, slide-up entry animations, and a polished header.
-- **🔍 Real-Time Search**: Filter courses dynamically by title from the main search bar in the catalog view.
-- **❤️ Course Favorites**: Star/unstar courses to build your personal shortlist. Favorited states are saved to `localStorage` and filterable with a dedicated "Favorites" tab.
-- **🌙 Optional Dark Mode Toggle**: Easily toggle between light and dark themes using the header control (persisted in `localStorage`).
-- **📊 Dynamic Dashboard Stats**: Live calculation of overall learning stats:
+- ** Modern Dashboard Layout**: Responsive sidebar navigation menu, clean content cards, slide-up entry animations, and a polished header.
+- ** Real-Time Search**: Filter courses dynamically by title from the main search bar in the catalog view.
+- ** Course Favorites**: Star/unstar courses to build your personal shortlist. Favorited states are saved to `localStorage` and filterable with a dedicated "Favorites" tab.
+- ** Optional Dark Mode Toggle**: Easily toggle between light and dark themes using the header control (persisted in `localStorage`).
+- **Dynamic Dashboard Stats**: Live calculation of overall learning stats:
   - Total Courses
   - Completed Materials (updates instantly as checklist items are checked)
   - Pending Assignments
   - Upcoming Live Sessions
-- **🔔 Next Live Class Card**: Displays info for the closest upcoming live session at the top of the dashboard, complete with direct "Join Class" buttons.
-- **📈 Dynamic Progress Tracking**: Marking checklist items (Videos, PDFs, Labs, Articles) in the Study Materials section instantly updates the progress bar and dynamically updates the course's completion state (completed courses shift to the "Completed" tab automatically).
-- **💼 Instructor Profiles & Contact**: Clean instructor cards with dynamic ratings and clickable email contact prompts.
+- ** Next Live Class Card**: Displays info for the closest upcoming live session at the top of the dashboard, complete with direct "Join Class" buttons.
+- ** Dynamic Progress Tracking**: Marking checklist items (Videos, PDFs, Labs, Articles) in the Study Materials section instantly updates the progress bar and dynamically updates the course's completion state (completed courses shift to the "Completed" tab automatically).
+- ** Instructor Profiles & Contact**: Clean instructor cards with dynamic ratings and clickable email contact prompts.
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Frontend Core**: React, React Router DOM (v7)
 - **Styling**: Tailwind CSS (v4 - CSS-first configuration)
@@ -34,7 +34,7 @@ Developed using **React**, **Vite**, **Tailwind CSS (v4)**, and **React Query**,
 
 ---
 
-## 📂 Project Directory Structure
+##  Project Directory Structure
 
 ```text
 my-courses/
@@ -64,12 +64,12 @@ my-courses/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 📋 Prerequisites
+###  Prerequisites
 Ensure you have **Node.js** (v18 or higher) and **npm** installed on your local machine.
 
-### 📥 Installation
+###  Installation
 
 1. Navigate to the project directory:
    ```bash
@@ -81,7 +81,7 @@ Ensure you have **Node.js** (v18 or higher) and **npm** installed on your local 
    npm install
    ```
 
-### ⚙️ Running the Application
+###  Running the Application
 
 To run the application, you need to start **both** the backend database server and the Vite development server.
 

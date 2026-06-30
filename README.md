@@ -1,12 +1,34 @@
 #  my-courses: Modern LMS Platform
 
+🚀 **Live Demo**: [my-courses-app-eight.vercel.app](https://my-courses-app-eight.vercel.app/)
+
 A premium, modern Learning Management System (LMS) dashboard inspired by Coursera and Udemy. Features include a clean card-based catalog, dynamic course completion tracking, course search, a favorites system, an upcoming live session display, and full dark mode support.
 
 Developed using **React**, **Vite**, **Tailwind CSS (v4)**, and **React Query**, with data stored in a lightweight mock **JSON Server** backend.
 
 ---
 
+<<<<<<< HEAD
 ## Features
+=======
+## 🖼️ App Screenshots
+
+### 1. Dashboard View (My Courses Catalog)
+Includes search, theme toggles, dynamic counter stats, and the Next Live Class scheduler block.
+![Dashboard Landing](screenshots/dashboard_landing.png)
+
+### 2. Responsive Catalog Grid
+Cards dynamically display instructor ratings, names, and progress bar percentages computed directly from database material completions.
+![Dashboard Catalog Grid](screenshots/dashboard_catalog.png)
+
+### 3. Course Details Page
+Interactive study checklists (PDF, Video, Lab, Article specific icons), pending assignments with status chips, and upcoming live session join links.
+![Course Details](screenshots/course_details.png)
+
+---
+
+## ✨ Features
+>>>>>>> a976414 (final)
 
 - **Modern Dashboard Layout** – Responsive sidebar navigation, clean dashboard cards, smooth slide-up animations, and a polished user interface.
 - **Real-Time Course Search** – Instantly filter courses by title from the catalog search bar.
@@ -41,6 +63,7 @@ Developed using **React**, **Vite**, **Tailwind CSS (v4)**, and **React Query**,
 my-courses/
 ├── server/
 │   └── db.json               # Local database (Students, Courses, Materials, Assignments, Live Classes)
+├── screenshots/              # Redesigned UI showcase screenshots for README.md
 ├── src/
 │   ├── assets/               # Image assets and static resources
 │   ├── components/

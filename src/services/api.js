@@ -1,9 +1,7 @@
 import axios from "axios";
- 
 
-const api =axios.create({
-    baseURL:"http://localhost:3001"
-
+const api = axios.create({
+    baseURL: "https://my-courses-api-2.onrender.com"
 });
 
 export default api;
